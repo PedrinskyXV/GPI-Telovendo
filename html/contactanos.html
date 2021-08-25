@@ -13,6 +13,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 </head>
 
 <body>
@@ -25,9 +37,9 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Contáctanos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Quiénes somos</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../html/contactanos.html">Contáctanos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../html/quienessomos.html">Quiénes somos</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
@@ -37,7 +49,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li><a class="dropdown-item" href="#!">Más vendidos del mes</a></li>
-                            <li><a class="dropdown-item" href="#!">Más baratos del mes</a></li>
+                            <li><a class="dropdown-item" href="../html/productos.html">Más baratos del mes</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,7 +74,48 @@
     </header>
     <!-- Section-->
     <section class="py-5">
-        
+        <div class="container">
+            <div>
+                <h1>Contáctanos</h1>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="map" style="width:100%; height:350px;"></div>
+                </div>
+                <br />
+                <div class="col-md-6">
+                    <form class="my-form">
+                        <div class="form-group">
+                            <label for="form-name">Nombre</label>
+                            <input type="email" class="form-control" id="form-name" placeholder="Nombre Completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Correo Electronico</label>
+                            <input type="email" class="form-control" id="form-email" placeholder="Correo Electronico">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Numero de contacto</label>
+                            <input type="text" class="form-control" id="form-subject" placeholder="(503) ####-####">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Mensaje</label>
+                            <textarea class="form-control" id="form-message"
+                                placeholder="Breve descripción del mensaje"></textarea>
+                        </div>
+                        <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+                    </form>
+                    <hr>
+                    <h2 class="display-6 fw-bolder">Redes Sociales</h2>
+                    <p class="lead">Contáctenos a través de nuestras redes sociales, sera un placer atender tus consultas</p>
+                   <div class="py-3">                       
+                    <div class="socializer" data-features="32px,opacity,icon-white,pad"
+                    data-sites="facebook,twitter,whatsapp,instagram" data-meta-link="" data-meta-title=""></div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
     </section>
     <!-- Footer-->
     <footer class="py-5 bg-secondary">
@@ -74,10 +127,10 @@
                             <h4 class="footer-name">Nosotros</h4>
                         </div>
                         <div class="content">
-                            <p><a title="Quienes Somos"
-                                    href="https://www.telovendo.com/quienes-somos/">Quiénes somos</a></p>
-                            <p><a title="Unete a nosotros"
-                                    href="https://www.telovendo.com/unete-a-nosotros/">Unete a nosotros</a>
+                            <p><a title="Quienes Somos" href="https://www.telovendo.com/quienes-somos/">Quiénes
+                                    somos</a></p>
+                            <p><a title="Unete a nosotros" href="https://www.telovendo.com/unete-a-nosotros/">Unete a
+                                    nosotros</a>
                             </p>
                             <p><a title="Contacto" href="https://www.telovendo.com/contact/">Contacto</a>
                             </p>
@@ -86,8 +139,8 @@
                                     Frecuentes</a></p>
                             <p style="display:none"><a class="tiendas" title="Tiendas"
                                     href="https://www.telovendo.com/tiendas/"> <img
-                                        src="https://www.telovendo.com/pub/media/wysiwyg/icons/PinShop.svg"
-                                        alt="" width="18px"> Tiendas</a></p>
+                                        src="https://www.telovendo.com/pub/media/wysiwyg/icons/PinShop.svg" alt=""
+                                        width="18px"> Tiendas</a></p>
                         </div>
                     </div>
                 </div>
@@ -116,7 +169,7 @@
                                     href="https://www.telovendo.com/politicas-de-devoluciones/">Políticas de
                                     Devolución</a></p>
                         </div>
-                    </div>                
+                    </div>
                 </div>
                 <div class="col">
                     <div class="contactanos">
@@ -127,16 +180,16 @@
                             <p style="display: none;">Horarios de Atención al cliente</p>
                             <p style="display: none;">- 10:00 am a 7:00 pm</p>
                             <p style="display: none;">Dirección</p>
-                            <p><img src="https://www.telovendo.com/pub/media/wysiwyg/icons/PinShop.svg"
-                                    alt="" width="18px"> Km. 11 Carretera a Santa Tecla.
-                                </p>
+                            <p><img src="https://www.telovendo.com/pub/media/wysiwyg/icons/PinShop.svg" alt=""
+                                    width="18px"> Km. 11 Carretera a Santa Tecla.
+                            </p>
                             <p style="display: none;">Cují a Romualda, La Hoyada. Venezuela</p>
                             <p><a href="tel:+584169150067"> <span class="icon_telovendo-phone"></span>
                                     <b>Atención al cliente:</b>2132-7400</a></p>
-                            <p><a href="mailto:telovendodipro@gmail.com"> <span
-                                        class="icon_telovendo-mail"></span> telovendodipro@gmail.com</a></p>
+                            <p><a href="mailto:telovendodipro@gmail.com"> <span class="icon_telovendo-mail"></span>
+                                    telovendodipro@gmail.com</a></p>
                         </div>
-                    </div>                
+                    </div>
                 </div>
                 <div class="col">
                     <div class="logoscorp-payment">
@@ -164,6 +217,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js"></script>
+    <script>
+        (function () {
+            socializer('.socializer');
+        }());
+    </script>
 </body>
 
 </html>
